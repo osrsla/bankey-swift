@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3022231D2A85CE93007AB9BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022231C2A85CE93007AB9BC /* LoginView.swift */; };
+		30746CEA2A88FFD7002AF73C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 30746CE92A88FFD7002AF73C /* .gitignore */; };
 		30CE83FE2A838E0200D22541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE83FD2A838E0200D22541 /* AppDelegate.swift */; };
 		30CE84022A838E0200D22541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE84012A838E0200D22541 /* LoginViewController.swift */; };
 		30CE84072A838E0400D22541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CE84062A838E0400D22541 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		3022231C2A85CE93007AB9BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		30746CE92A88FFD7002AF73C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		30CE83FA2A838E0200D22541 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CE83FD2A838E0200D22541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30CE84012A838E0200D22541 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 		3022231A2A85CB22007AB9BC /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				30746CE92A88FFD7002AF73C /* .gitignore */,
 				30CE840B2A838E0400D22541 /* Info.plist */,
 				30CE84062A838E0400D22541 /* Assets.xcassets */,
 				30CE84082A838E0400D22541 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CE840A2A838E0400D22541 /* LaunchScreen.storyboard in Resources */,
+				30746CEA2A88FFD7002AF73C /* .gitignore in Resources */,
 				30CE84072A838E0400D22541 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
