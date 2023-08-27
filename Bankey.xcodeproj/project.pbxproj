@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3022231D2A85CE93007AB9BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022231C2A85CE93007AB9BC /* LoginView.swift */; };
-		306035582A98AF4D0024EB60 /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306035572A98AF4D0024EB60 /* OnBoardingContainerViewController.swift */; };
-		3060355A2A9B29D30024EB60 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306035592A9B29D30024EB60 /* OnBoardingViewController.swift */; };
+		306035582A98AF4D0024EB60 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306035572A98AF4D0024EB60 /* OnboardingContainerViewController.swift */; };
+		3060355A2A9B29D30024EB60 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306035592A9B29D30024EB60 /* OnboardingViewController.swift */; };
 		30746CEA2A88FFD7002AF73C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 30746CE92A88FFD7002AF73C /* .gitignore */; };
 		30CE83FE2A838E0200D22541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE83FD2A838E0200D22541 /* AppDelegate.swift */; };
 		30CE84022A838E0200D22541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE84012A838E0200D22541 /* LoginViewController.swift */; };
@@ -19,8 +19,8 @@
 
 /* Begin PBXFileReference section */
 		3022231C2A85CE93007AB9BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		306035572A98AF4D0024EB60 /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
-		306035592A9B29D30024EB60 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		306035572A98AF4D0024EB60 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		306035592A9B29D30024EB60 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		30746CE92A88FFD7002AF73C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		30CE83FA2A838E0200D22541 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CE83FD2A838E0200D22541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		306035562A98AF100024EB60 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				306035572A98AF4D0024EB60 /* OnBoardingContainerViewController.swift */,
-				306035592A9B29D30024EB60 /* OnBoardingViewController.swift */,
+				306035572A98AF4D0024EB60 /* OnboardingContainerViewController.swift */,
+				306035592A9B29D30024EB60 /* OnboardingViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -89,8 +89,8 @@
 		30CE83FC2A838E0200D22541 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				306035562A98AF100024EB60 /* OnBoarding */,
 				3022231A2A85CB22007AB9BC /* Files */,
+				306035562A98AF100024EB60 /* OnBoarding */,
 				3022231B2A85CE61007AB9BC /* Login */,
 				30CE83FD2A838E0200D22541 /* AppDelegate.swift */,
 			);
@@ -171,8 +171,8 @@
 				3022231D2A85CE93007AB9BC /* LoginView.swift in Sources */,
 				30CE84022A838E0200D22541 /* LoginViewController.swift in Sources */,
 				30CE83FE2A838E0200D22541 /* AppDelegate.swift in Sources */,
-				306035582A98AF4D0024EB60 /* OnBoardingContainerViewController.swift in Sources */,
-				3060355A2A9B29D30024EB60 /* OnBoardingViewController.swift in Sources */,
+				306035582A98AF4D0024EB60 /* OnboardingContainerViewController.swift in Sources */,
+				3060355A2A9B29D30024EB60 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
