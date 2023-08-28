@@ -7,6 +7,8 @@
 
 import UIKit
 
+let appColor: UIColor = .systemTeal
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -15,17 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 4. 정보를 받는 곳에 정보를 보낼 곳 let 상수 생성
     let onboardingContainerViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
+    let mainViewController = MainViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible() // .makeKeyAndVisible(): UIWindow 객체를 주요 창으로 설정하고 화면에 표시하는 역할
         window?.backgroundColor = .systemBackground
         loginViewController.delegate = self
         // 5. self 델리게이트 등록
         onboardingContainerViewController.delegate = self
         dummyViewController.logoutDelegate = self
 
-        window?.rootViewController = loginViewController
+        window?.rootViewController = mainViewController
+        mainViewController.selectedIndex = 1 // 첫 번째로 보일 탭 설정(디폴트 0)
 
         return true
     }
