@@ -1,11 +1,20 @@
 import UIKit
 
+// 1. 정보를 보내는 곳에서 프로토콜 델리게이트 만들기
+protocol OnboardingContainerViewControllerDelegate: AnyObject {
+    func didFinishOnboarding()
+}
+
 class OnboardingContainerViewController: UIViewController {
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
-    var currentVC: UIViewController {
-        didSet {}
-    }
+
+    // 2. 정보를 보내는 곳에 weak var 델리게이트 변수 생성(weak 약한 결합 시 옵셔널(?) 필수)
+    weak var delegate: OnboardingContainerViewControllerDelegate?
+
+    var currentVC: UIViewController { didSet {}}
+
+    var closeButton = UIButton(type: .system)
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -31,14 +40,21 @@ class OnboardingContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+        setupStyle()
+        setupLayout()
+    }
+
+    private func setup() {
         view.backgroundColor = .systemPurple
 
         // 차일드뷰 추가 3 steps
-        addChild(pageViewController) // 현재 뷰컨트롤러에 자식으로 추가. pageViewController가 뷰 컨트롤러의 계층 구조에 포함됨
-
-        view.addSubview(pageViewController.view) // pageViewController의 뷰를 현재 뷰 컨트롤러의 서브뷰로 추가. pageViewController의 뷰가 현재 뷰 컨트롤러의 인터페이스에 나타남
-
-        pageViewController.didMove(toParent: self) // pageViewController에게 뷰 계층에 추가되었음 알림.
+        // 1. 현재 뷰컨트롤러에 자식으로 추가. pageVC가 뷰 컨트롤러의 계층 구조에 포함됨
+        addChild(pageViewController)
+        // 2. pageViewController의 뷰를 현재 뷰 컨트롤러의 서브뷰로 추가. pageVC의 뷰가 현재 뷰 컨트롤러의 인터페이스에 나타남
+        view.addSubview(pageViewController.view)
+        // 3. pageVC에게 뷰 계층에 추가되었음 알림
+        pageViewController.didMove(toParent: self)
 
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +68,23 @@ class OnboardingContainerViewController: UIViewController {
 
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
         currentVC = pages.first!
+    }
+
+    private func setupStyle() {
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.setTitle("Close", for: [])
+        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+
+        view.addSubview(closeButton)
+    }
+
+    private func setupLayout() {
+        // Close Button
+        NSLayoutConstraint.activate([
+            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+
+        ])
     }
 }
 
@@ -87,4 +120,11 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
 }
 
+// MARK: - Actions
 
+extension OnboardingContainerViewController {
+    @objc func closeTapped(_ sender: UIButton) {
+        // 3. 델리게이트 변수로 정보 쏘기
+        delegate?.didFinishOnboarding()
+    }
+}

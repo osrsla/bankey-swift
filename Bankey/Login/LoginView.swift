@@ -17,8 +17,8 @@ class LoginView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        style()
-        layout()
+        setupStyle()
+        setupLayout()
     }
     
     @available(*, unavailable)
@@ -28,7 +28,7 @@ class LoginView: UIView {
 }
 
 extension LoginView {
-    func style() {
+    func setupStyle() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .secondarySystemBackground
         
@@ -53,7 +53,7 @@ extension LoginView {
         clipsToBounds = true
     }
     
-    func layout() {
+    func setupLayout() {
         stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(dividerView)
         stackView.addArrangedSubview(passwordTextField)

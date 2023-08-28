@@ -7,12 +7,23 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LoginViewControllerDelegate: AnyObject {
+//    func didLogin(_ sender: LoginViewController) // pass data
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLable = UILabel()
     
-    var usernmame: String? {
+    weak var delegate: LoginViewControllerDelegate?
+    
+    var username: String? {
         return loginView.usernameTextField.text
     }
     
@@ -23,13 +34,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        style()
-        layout()
+        setupStyle()
+        setupLayout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
 extension LoginViewController {
-    private func style() {
+    private func setupStyle() {
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +61,7 @@ extension LoginViewController {
         errorMessageLable.isHidden = true
     }
     
-    private func layout() {
+    private func setupLayout() {
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLable)
@@ -70,6 +86,8 @@ extension LoginViewController {
     }
 }
 
+// MARK: Actions
+
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
         errorMessageLable.isHidden = true
@@ -77,22 +95,27 @@ extension LoginViewController {
     }
 
     private func login() {
-        guard let username = usernmame, let password = password else {
-            assertionFailure("Username / Password should never be nil")
-            return
-        }
-        
-        if username.isEmpty || password.isEmpty {
-            configureView(withMessage: "Username / Password cannot be blank")
-            return
-        }
-        
-        if username == "Kevin", password == "Welcome" {
-            signInButton.configuration?.showsActivityIndicator = true
-        } else {
-            configureView(withMessage: "Incorrect Username / Password")
-        }
+        signInButton.configuration?.showsActivityIndicator = true
+        delegate?.didLogin()
     }
+
+//        guard let username = username, let password = password else {
+//            assertionFailure("Username / Password should never be nil")
+//            return
+//        }
+//
+//        if username.isEmpty || password.isEmpty {
+//            configureView(withMessage: "Username / Password cannot be blank")
+//            return
+//        }
+//
+//        if username == "Kevin", password == "Welcome" {
+//            signInButton.configuration?.showsActivityIndicator = true // 진행중 표시⟳
+//            delegate?.didLogin()
+//        } else {
+//            configureView(withMessage: "Incorrect Username / Password")
+//        }
+//    }
     
     private func configureView(withMessage message: String) {
         errorMessageLable.isHidden = false

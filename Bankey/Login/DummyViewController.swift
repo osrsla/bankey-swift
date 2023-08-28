@@ -1,66 +1,52 @@
 //
-//  OnBoardingViewController.swift
+//  DummyViewController.swift
 //  Bankey
 //
-//  Created by SR on 2023/08/27.
+//  Created by SR on 2023/08/28.
 //
-
-import Foundation
 
 import UIKit
 
-
-class OnboardingViewController: UIViewController {
+class DummyViewController: UIViewController {
     let stackView = UIStackView()
-    let imageView = UIImageView()
     let label = UILabel()
+    let logoutButton = UIButton(type: .system)
     
-    let heroImageName: String
-    let titleText: String
+    weak var logoutDelegate: LogoutDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStyle()
         setupLayout()
     }
-    
-    init(heroImageName: String, titleText: String) {
-        self.heroImageName = heroImageName
-        self.titleText = titleText
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
-extension OnboardingViewController {
+extension DummyViewController {
     func setupStyle() {
         view.backgroundColor = .systemBackground // ! dont forget
-    
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
         
-        // Image
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: heroImageName)
-        
         // Label
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .title3)
-        label.adjustsFontForContentSizeCategory = true
-        label.numberOfLines = 0 // 디폴트 1, 0: 무제한
-        label.text = titleText
+        label.text = "Welcome!"
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        
+        // Button
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        logoutButton.configuration = .filled()
+        logoutButton.setTitle("Loggout", for: [])
+        logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .primaryActionTriggered)
+        
+        
     }
     
     func setupLayout() {
-        stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(logoutButton)
         
         view.addSubview(stackView)
         
@@ -71,4 +57,12 @@ extension OnboardingViewController {
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
         ])
     }
+    
+    // selectors are names methods we want to execute at runtime.
+    // @objc Objective-C 에트리뷰트: Enables us to interact with Objective-C runtime.
+    @objc func logoutButtonTapped(sender: UIButton) {
+        logoutDelegate?.didLogout()
+    }
+    
+    
 }
