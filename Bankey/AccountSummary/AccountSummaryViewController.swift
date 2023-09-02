@@ -64,9 +64,6 @@ extension AccountSummaryViewController: UITableViewDataSource {
         cell.configure(with: account)
         
         return cell
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as! AccountSummaryCell
-//        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

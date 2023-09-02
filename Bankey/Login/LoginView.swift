@@ -48,7 +48,6 @@ extension LoginView {
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .secondarySystemFill
         
-        // 둥근 코너 만들기, core layer에 접근
         layer.cornerRadius = 5
         clipsToBounds = true
     }

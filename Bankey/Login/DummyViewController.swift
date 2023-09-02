@@ -23,7 +23,7 @@ class DummyViewController: UIViewController {
 
 extension DummyViewController {
     func setupStyle() {
-        view.backgroundColor = .systemBackground // ! dont forget
+        view.backgroundColor = .systemBackground
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -58,8 +58,7 @@ extension DummyViewController {
         ])
     }
     
-    // selectors are names methods we want to execute at runtime.
-    // @objc Objective-C 에트리뷰트: Enables us to interact with Objective-C runtime.
+
     @objc func logoutButtonTapped(sender: UIButton) {
         logoutDelegate?.didLogout()
     }

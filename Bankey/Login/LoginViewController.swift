@@ -12,7 +12,6 @@ protocol LogoutDelegate: AnyObject {
 }
 
 protocol LoginViewControllerDelegate: AnyObject {
-//    func didLogin(_ sender: LoginViewController) // pass data
     func didLogin()
 }
 
@@ -95,27 +94,23 @@ extension LoginViewController {
     }
 
     private func login() {
-        signInButton.configuration?.showsActivityIndicator = true
-        delegate?.didLogin()
-    }
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password should never be nil")
+            return
+        }
 
-//        guard let username = username, let password = password else {
-//            assertionFailure("Username / Password should never be nil")
-//            return
-//        }
-//
 //        if username.isEmpty || password.isEmpty {
-//            configureView(withMessage: "Username / Password cannot be blank")
+//            configureView(withMessage: "Username / password cannot be blank")
 //            return
 //        }
-//
-//        if username == "Kevin", password == "Welcome" {
-//            signInButton.configuration?.showsActivityIndicator = true // 진행중 표시⟳
-//            delegate?.didLogin()
-//        } else {
-//            configureView(withMessage: "Incorrect Username / Password")
-//        }
-//    }
+               
+        if username == "", password == "" {
+            signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
+        } else {
+            configureView(withMessage: "Incorrect username / password")
+        }
+    }
     
     private func configureView(withMessage message: String) {
         errorMessageLable.isHidden = false
