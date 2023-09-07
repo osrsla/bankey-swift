@@ -14,6 +14,8 @@
 		30AA6DA62AA385C600AA7DC1 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA6DA52AA385C600AA7DC1 /* NSNotificationName.swift */; };
 		30AA6DA82AA388F100AA7DC1 /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA6DA72AA388F100AA7DC1 /* UITextField+SecureToggle.swift */; };
 		30AA6DAB2AA472E300AA7DC1 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA6DAA2AA472E300AA7DC1 /* ShakeyBellView.swift */; };
+		30AA6DFD2AA7051600AA7DC1 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA6DFC2AA7051600AA7DC1 /* Date+Utils.swift */; };
+		30AA6DFF2AA706E600AA7DC1 /* AccountSummaryViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA6DFE2AA706E600AA7DC1 /* AccountSummaryViewController+Network.swift */; };
 		30CDE0C72A9C2B27000E706D /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0C62A9C2B27000E706D /* DummyViewController.swift */; };
 		30CDE0CA2A9C416C000E706D /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0C92A9C416C000E706D /* LocalState.swift */; };
 		30CDE0CC2A9C7A53000E706D /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0CB2A9C7A53000E706D /* UIViewController+Utils.swift */; };
@@ -49,6 +51,8 @@
 		30AA6DA52AA385C600AA7DC1 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		30AA6DA72AA388F100AA7DC1 /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		30AA6DAA2AA472E300AA7DC1 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
+		30AA6DFC2AA7051600AA7DC1 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		30AA6DFE2AA706E600AA7DC1 /* AccountSummaryViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Network.swift"; sourceTree = "<group>"; };
 		30CDE0C62A9C2B27000E706D /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		30CDE0C92A9C416C000E706D /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		30CDE0CB2A9C7A53000E706D /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				30CDE0C92A9C416C000E706D /* LocalState.swift */,
 				30CDE1002AA33672000E706D /* CurrencyFormatter.swift */,
 				30AA6DA52AA385C600AA7DC1 /* NSNotificationName.swift */,
+				30AA6DFC2AA7051600AA7DC1 /* Date+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				30CDE0D02A9D1AE7000E706D /* AccountSummaryViewController.swift */,
+				30AA6DFE2AA706E600AA7DC1 /* AccountSummaryViewController+Network.swift */,
 				30CDE0DA2A9DD134000E706D /* Header */,
 				30CDE0DB2A9DD152000E706D /* Cells */,
 			);
@@ -318,12 +324,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CDE0CC2A9C7A53000E706D /* UIViewController+Utils.swift in Sources */,
+				30AA6DFD2AA7051600AA7DC1 /* Date+Utils.swift in Sources */,
 				3022231D2A85CE93007AB9BC /* LoginView.swift in Sources */,
 				30CDE0CA2A9C416C000E706D /* LocalState.swift in Sources */,
 				30CDE0D32A9D20B2000E706D /* AccountSummaryHeaderView.swift in Sources */,
 				30AA6DA82AA388F100AA7DC1 /* UITextField+SecureToggle.swift in Sources */,
 				30CDE0C72A9C2B27000E706D /* DummyViewController.swift in Sources */,
 				30CDE1012AA33672000E706D /* CurrencyFormatter.swift in Sources */,
+				30AA6DFF2AA706E600AA7DC1 /* AccountSummaryViewController+Network.swift in Sources */,
 				30CDE0FF2AA335D4000E706D /* Decimal+Utils.swift in Sources */,
 				30AA6DA62AA385C600AA7DC1 /* NSNotificationName.swift in Sources */,
 				30CE84022A838E0200D22541 /* LoginViewController.swift in Sources */,
