@@ -15,7 +15,6 @@ enum AccountType: String, Codable {
 }
 
 class AccountSummaryCell: UITableViewCell {
-  
     
     struct ViewModel {
         let accountType: AccountType

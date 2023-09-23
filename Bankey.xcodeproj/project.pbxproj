@@ -33,6 +33,8 @@
 		30CE840A2A838E0400D22541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CE84082A838E0400D22541 /* LaunchScreen.storyboard */; };
 		30CF1B562AA96D8A0000F5E6 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF1B552AA96D8A0000F5E6 /* ProfileTests.swift */; };
 		30CF1B582AA970200000F5E6 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF1B572AA970200000F5E6 /* AccountTests.swift */; };
+		30CF1B5A2AAADC420000F5E6 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF1B592AAADC420000F5E6 /* SkeletonLoadable.swift */; };
+		30CF1B5C2AAADD050000F5E6 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF1B5B2AAADD050000F5E6 /* SkeletonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		30CE840B2A838E0400D22541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30CF1B552AA96D8A0000F5E6 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
 		30CF1B572AA970200000F5E6 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
+		30CF1B592AAADC420000F5E6 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		30CF1B5B2AAADD050000F5E6 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				30CDE0DC2A9DD189000E706D /* AccountSummaryCell.swift */,
+				30CF1B592AAADC420000F5E6 /* SkeletonLoadable.swift */,
+				30CF1B5B2AAADD050000F5E6 /* SkeletonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CDE0CC2A9C7A53000E706D /* UIViewController+Utils.swift in Sources */,
+				30CF1B5C2AAADD050000F5E6 /* SkeletonCell.swift in Sources */,
 				30AA6DFD2AA7051600AA7DC1 /* Date+Utils.swift in Sources */,
 				3022231D2A85CE93007AB9BC /* LoginView.swift in Sources */,
 				30CDE0CA2A9C416C000E706D /* LocalState.swift in Sources */,
@@ -365,6 +372,7 @@
 				30CDE0CE2A9CC2C9000E706D /* MainViewController.swift in Sources */,
 				30CDE0D12A9D1AE7000E706D /* AccountSummaryViewController.swift in Sources */,
 				306035582A98AF4D0024EB60 /* OnboardingContainerViewController.swift in Sources */,
+				30CF1B5A2AAADC420000F5E6 /* SkeletonLoadable.swift in Sources */,
 				3060355A2A9B29D30024EB60 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
